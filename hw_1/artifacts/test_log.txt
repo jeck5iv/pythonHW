@@ -1,7 +1,9 @@
 Running: printf "line1
 line278
-line3" | python cli.py nl
-run_tests.sh: 1: eval: python: not found
+line3" | python3 cli.py nl
+     1	line1
+     2	line278
+     3	line3
 
 Running (Linux): printf "line1
 line278
@@ -12,8 +14,10 @@ line3" | nl -b a
 
 Running: printf "line1
 line278
-line3" > artifacts/test.txt; python cli.py nl artifacts/test.txt
-run_tests.sh: 1: eval: python: not found
+line3" > artifacts/test.txt; python3 cli.py nl artifacts/test.txt
+     1	line1
+     2	line278
+     3	line3
 
 Running (Linux): printf "line1
 line278
@@ -22,13 +26,28 @@ line3" > artifacts/test.txt; nl -b a artifacts/test.txt
      2	line278
      3	line3
 
-Running: touch artifacts/empty.txt; python cli.py nl artifacts/empty.txt
-run_tests.sh: 1: eval: python: not found
+Running: touch artifacts/empty.txt; python3 cli.py nl artifacts/empty.txt
 
 Running (Linux): touch artifacts/empty.txt; nl -b a artifacts/empty.txt
 
-Running: seq 1 20 | python cli.py tail
-run_tests.sh: 1: eval: python: not found
+Running: seq 1 20 | python3 cli.py tail
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
 
 Running (Linux): seq 1 20 | tail -n 17
 4
@@ -49,8 +68,17 @@ Running (Linux): seq 1 20 | tail -n 17
 19
 20
 
-Running: seq 1 15 > artifacts/test.txt; python cli.py tail artifacts/test.txt
-run_tests.sh: 1: eval: python: not found
+Running: seq 1 15 > artifacts/test.txt; python3 cli.py tail artifacts/test.txt
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
 
 Running (Linux): seq 1 15 > artifacts/test.txt; tail -n 10 artifacts/test.txt
 6
@@ -64,8 +92,20 @@ Running (Linux): seq 1 15 > artifacts/test.txt; tail -n 10 artifacts/test.txt
 14
 15
 
-Running: seq 1 5 > artifacts/test1.txt; seq 6 10 > artifacts/test2.txt; python cli.py tail artifacts/test1.txt artifacts/test2.txt
-run_tests.sh: 1: eval: python: not found
+Running: seq 1 5 > artifacts/test1.txt; seq 6 10 > artifacts/test2.txt; python3 cli.py tail artifacts/test1.txt artifacts/test2.txt
+==> artifacts/test1.txt <==
+1
+2
+3
+4
+5
+
+==> artifacts/test2.txt <==
+6
+7
+8
+9
+10
 
 Running (Linux): seq 1 5 > artifacts/test1.txt; seq 6 10 > artifacts/test2.txt; tail -n 10 artifacts/test1.txt artifacts/test2.txt
 ==> artifacts/test1.txt <==
@@ -82,15 +122,14 @@ Running (Linux): seq 1 5 > artifacts/test1.txt; seq 6 10 > artifacts/test2.txt; 
 9
 10
 
-Running: touch artifacts/empty.txt; python cli.py tail artifacts/empty.txt
-run_tests.sh: 1: eval: python: not found
+Running: touch artifacts/empty.txt; python3 cli.py tail artifacts/empty.txt
 
 Running (Linux): touch artifacts/empty.txt; tail -n 10 artifacts/empty.txt
 
 Running: printf "line1
 line278
-line3" | python cli.py wc
-run_tests.sh: 1: eval: python: not found
+line3" | python3 cli.py wc
+      2       3      19
 
 Running (Linux): printf "line1
 line278
@@ -99,8 +138,8 @@ line3" | wc
 
 Running: printf "line1
 line278
-line3" > artifacts/test.txt; python cli.py wc artifacts/test.txt
-run_tests.sh: 1: eval: python: not found
+line3" > artifacts/test.txt; python3 cli.py wc artifacts/test.txt
+ 2  3 19 artifacts/test.txt
 
 Running (Linux): printf "line1
 line278
@@ -109,8 +148,10 @@ line3" > artifacts/test.txt; wc artifacts/test.txt
 
 Running: printf "line1
 line278" > artifacts/test1.txt; printf "line3
-line4" > artifacts/test2.txt; python cli.py wc artifacts/test1.txt artifacts/test2.txt
-run_tests.sh: 1: eval: python: not found
+line4" > artifacts/test2.txt; python3 cli.py wc artifacts/test1.txt artifacts/test2.txt
+ 1  2 13 artifacts/test1.txt
+ 1  2 11 artifacts/test2.txt
+ 2  4 24 total
 
 Running (Linux): printf "line1
 line278" > artifacts/test1.txt; printf "line3
@@ -119,22 +160,25 @@ line4" > artifacts/test2.txt; wc artifacts/test1.txt artifacts/test2.txt
  1  2 11 artifacts/test2.txt
  2  4 24 total
 
-Running: touch artifacts/empty.txt; python cli.py wc artifacts/empty.txt
-run_tests.sh: 1: eval: python: not found
+Running: touch artifacts/empty.txt; python3 cli.py wc artifacts/empty.txt
+0 0 0 artifacts/empty.txt
 
 Running (Linux): touch artifacts/empty.txt; wc artifacts/empty.txt
 0 0 0 artifacts/empty.txt
 
 Running: printf "line1
 line278
-line3" | python cli.py nl; printf "line1
+line3" | python3 cli.py nl; printf "line1
 line278
-line3" | python cli.py tail; printf "line1
+line3" | python3 cli.py tail; printf "line1
 line278
-line3" | python cli.py wc
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
+line3" | python3 cli.py wc
+     1	line1
+     2	line278
+     3	line3
+line1
+line278
+line3      2       3      19
 
 Running (Linux): printf "line1
 line278
@@ -152,10 +196,13 @@ line3      2       3      19
 
 Running: printf "line1
 line278
-line3" > artifacts/test.txt; python cli.py nl artifacts/test.txt; python cli.py tail artifacts/test.txt; python cli.py wc artifacts/test.txt
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
+line3" > artifacts/test.txt; python3 cli.py nl artifacts/test.txt; python3 cli.py tail artifacts/test.txt; python3 cli.py wc artifacts/test.txt
+     1	line1
+     2	line278
+     3	line3
+line1
+line278
+line3 2  3 19 artifacts/test.txt
 
 Running (Linux): printf "line1
 line278
@@ -167,10 +214,13 @@ line1
 line278
 line3 2  3 19 artifacts/test.txt
 
-Running: touch artifacts/empty1.txt artifacts/empty2.txt; python cli.py nl artifacts/empty1.txt; python cli.py tail artifacts/empty1.txt artifacts/empty2.txt; python cli.py wc artifacts/empty1.txt artifacts/empty2.txt
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
-run_tests.sh: 1: eval: python: not found
+Running: touch artifacts/empty1.txt artifacts/empty2.txt; python3 cli.py nl artifacts/empty1.txt; python3 cli.py tail artifacts/empty1.txt artifacts/empty2.txt; python3 cli.py wc artifacts/empty1.txt artifacts/empty2.txt
+==> artifacts/empty1.txt <==
+
+==> artifacts/empty2.txt <==
+0 0 0 artifacts/empty1.txt
+0 0 0 artifacts/empty2.txt
+0 0 0 total
 
 Running (Linux): touch artifacts/empty1.txt artifacts/empty2.txt; nl -b a artifacts/empty1.txt; tail -n 10 artifacts/empty1.txt artifacts/empty2.txt; wc artifacts/empty1.txt artifacts/empty2.txt
 ==> artifacts/empty1.txt <==
