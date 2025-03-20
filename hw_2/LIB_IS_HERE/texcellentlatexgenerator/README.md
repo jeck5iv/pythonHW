@@ -7,7 +7,7 @@ A Python library to generate LaTeX code for tables and images.
 You can install the library using `pip`:
 
 ```bash
-pip install latex_generator
+pip install texcellentlatexgenerator
 ```
 
 If you want to install it directly from the source, clone the repository and run:
