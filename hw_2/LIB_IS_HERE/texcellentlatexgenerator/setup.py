@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="texcellentlatexgenerator",
-    version="0.2.0",
+    version="0.4.0",
     author="Kalinin Ivan",
     author_email="jeck5ivk@gmail.com",
     description="A library to generate LaTeX code for tables and images.",

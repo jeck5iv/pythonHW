@@ -1,18 +1,27 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: texcellentlatexgenerator
-Version: 0.2.0
+Version: 0.4.0
 Summary: A library to generate LaTeX code for tables and images.
 Home-page: https://github.com/jeck5iv/pythonHW
 Author: Kalinin Ivan
 Author-email: jeck5ivk@gmail.com
 License: MIT
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
 
 # LaTeX Generator
 
@@ -125,5 +134,3 @@ No contributing.
 ## Author
 
 [https://github.com/jeck5iv](https://github.com/jeck5iv)
-
-

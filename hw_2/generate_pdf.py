@@ -1,4 +1,4 @@
-from texcellentlatexgenerator.texcellentlatexgenerator.texcellentlatexgenerator import generate_latex
+from texcellentlatexgenerator.generator import generate_latex
 import subprocess
 import os
 
