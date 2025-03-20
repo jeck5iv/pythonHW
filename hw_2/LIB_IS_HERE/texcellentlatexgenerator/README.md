@@ -23,7 +23,7 @@ The library provides functions to generate LaTeX code for tables and images. You
 ### Example 1: Generating a Table
 
 ```python
-from latex_generator import generate_latex
+from texcellentlatexgenerator.generator import generate_latex
 
 data = [
     ["ID", "Name", "POWER"],
@@ -39,7 +39,7 @@ print(latex_code)
 ### Example 2: Generating an Image
 
 ```python
-from latex_generator import generate_latex
+from texcellentlatexgenerator.generator import generate_latex
 
 latex_code = generate_latex(image_path="example.png")
 print(latex_code)
@@ -48,7 +48,7 @@ print(latex_code)
 ### Example 3: Combining Table and Image
 
 ```python
-from latex_generator import generate_latex
+from texcellentlatexgenerator.generator import generate_latex
 
 data = [
     ["ID", "Name", "POWER"],
