@@ -1,4 +1,4 @@
-from latex_generator_project.latex_generator.latex_generator import generate_latex
+from texcellentlatexgenerator.generator import generate_latex
 
 data = [
     ["ID", "Name", "POWER"],
