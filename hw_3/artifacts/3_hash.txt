@@ -1,0 +1,4 @@
+hash(A) = 15
+hash(C) = 15
+hash(AB) = 15
+hash(CD) = 5
