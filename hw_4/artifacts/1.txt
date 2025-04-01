@@ -1,0 +1,3 @@
+Sync execution time: 11.71895 seconds
+Threads execution time: 9.15190 seconds
+Processes execution time: 1.97799 seconds

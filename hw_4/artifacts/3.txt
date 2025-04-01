@@ -1,0 +1,95 @@
+[2025-04-01 18:05:34] Main process received input: 1
+[2025-04-01 18:05:35] Main process received input: 2
+[2025-04-01 18:05:35] Main process received input: 3
+[2025-04-01 18:05:35] Main process received input: 4
+[2025-04-01 18:05:36] Main process received input: 5
+[2025-04-01 18:05:36] Main process received input: 6
+[2025-04-01 18:05:37] Main process received input: 7
+[2025-04-01 18:05:37] Process A received: 1
+[2025-04-01 18:05:37] Process A stored: 1
+[2025-04-01 18:05:37] Process A received: 2
+[2025-04-01 18:05:37] Process A stored: 2
+[2025-04-01 18:05:37] Process A received: 3
+[2025-04-01 18:05:37] Process A stored: 3
+[2025-04-01 18:05:37] Process A received: 4
+[2025-04-01 18:05:37] Process A stored: 4
+[2025-04-01 18:05:37] Process A received: 5
+[2025-04-01 18:05:37] Process A stored: 5
+[2025-04-01 18:05:37] Process A received: 6
+[2025-04-01 18:05:37] Process A stored: 6
+[2025-04-01 18:05:37] Process A received: 7
+[2025-04-01 18:05:37] Process A stored: 7
+[2025-04-01 18:05:37] Process A sent: 1
+[2025-04-01 18:05:37] Process B received: 1
+[2025-04-01 18:05:37] Process B encoded: 1
+[2025-04-01 18:05:42] Process A sent: 2
+[2025-04-01 18:05:42] Process B received: 2
+[2025-04-01 18:05:42] Process B encoded: 2
+[2025-04-01 18:05:47] Process A sent: 3
+[2025-04-01 18:05:47] Process B received: 3
+[2025-04-01 18:05:47] Process B encoded: 3
+[2025-04-01 18:05:52] Process A sent: 4
+[2025-04-01 18:05:52] Process B received: 4
+[2025-04-01 18:05:52] Process B encoded: 4
+[2025-04-01 18:05:57] Process A sent: 5
+[2025-04-01 18:05:57] Process B received: 5
+[2025-04-01 18:05:57] Process B encoded: 5
+[2025-04-01 18:06:02] Process A sent: 6
+[2025-04-01 18:06:02] Process B received: 6
+[2025-04-01 18:06:02] Process B encoded: 6
+[2025-04-01 18:06:07] Process A sent: 7
+[2025-04-01 18:06:07] Process B received: 7
+[2025-04-01 18:06:07] Process B encoded: 7
+[2025-04-01 18:06:22] Main process received input: ZOPA
+[2025-04-01 18:06:22] Process A received: ZOPA
+[2025-04-01 18:06:22] Process A stored: zopa
+[2025-04-01 18:06:22] Process A sent: zopa
+[2025-04-01 18:06:22] Process B received: zopa
+[2025-04-01 18:06:22] Process B encoded: mbcn
+[2025-04-01 18:06:46] Main process received input: zzzz
+[2025-04-01 18:06:47] Process A received: zzzz
+[2025-04-01 18:06:47] Process A stored: zzzz
+[2025-04-01 18:06:47] Process A sent: zzzz
+[2025-04-01 18:06:47] Process B received: zzzz
+[2025-04-01 18:06:47] Process B encoded: mmmm
+[2025-04-01 18:06:49] Main process received input: iiiooo
+[2025-04-01 18:06:51] Main process received input: ppp
+[2025-04-01 18:06:51] Main process received input: 
+[2025-04-01 18:06:52] Process A received: iiiooo
+[2025-04-01 18:06:52] Process A stored: iiiooo
+[2025-04-01 18:06:52] Process A received: ppp
+[2025-04-01 18:06:52] Process A stored: ppp
+[2025-04-01 18:06:52] Process A received: 
+[2025-04-01 18:06:52] Process A stored: 
+[2025-04-01 18:06:52] Process A sent: iiiooo
+[2025-04-01 18:06:52] Process B received: iiiooo
+[2025-04-01 18:06:52] Process B encoded: vvvbbb
+[2025-04-01 18:06:53] Main process received input: aa
+[2025-04-01 18:06:57] Process A received: aa
+[2025-04-01 18:06:57] Process A stored: aa
+[2025-04-01 18:06:57] Process A sent: ppp
+[2025-04-01 18:06:57] Process B received: ppp
+[2025-04-01 18:06:57] Process B encoded: ccc
+[2025-04-01 18:07:02] Process A sent: 
+[2025-04-01 18:07:02] Process B received: 
+[2025-04-01 18:07:02] Process B encoded: 
+[2025-04-01 18:07:07] Process A sent: aa
+[2025-04-01 18:07:07] Process B received: aa
+[2025-04-01 18:07:07] Process B encoded: nn
+[2025-04-01 18:07:12] Main process received input: exit
+[2025-04-01 18:07:12] Process A received: exit
+[2025-04-01 18:07:12] Process B received: exit
+1
+2
+3
+4
+5
+6
+7
+mbcn
+mmmm
+vvvbbb
+ccc
+
+nn
+exit
