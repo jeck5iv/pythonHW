@@ -5,11 +5,12 @@ import os
 from uuid import uuid4
 
 ARTIFACTS_DIR = "artifacts/artifacts_1"
-URL = "https://thispersondoesnotexist.com/"
+BASE_URL = "https://picsum.photos/"
 
-async def fetch_image(session, idx):
+async def fetch_image(session, idx, width=800, height=600):
     try:
-        async with session.get(URL) as response:
+        url = f"{BASE_URL}/{width}/{height}"
+        async with session.get(url) as response:
             if response.status == 200:
                 img_bytes = await response.read()
                 filename = os.path.join(ARTIFACTS_DIR, f"{uuid4().hex}_{idx}.jpg")
@@ -34,3 +35,4 @@ if __name__ == "__main__":
     import sys
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 10
     asyncio.run(main(n))
+    
