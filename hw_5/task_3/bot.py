@@ -8,6 +8,8 @@ from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 from config import TELEGRAM_TOKEN
 from aiogram.client.default import DefaultBotProperties
+import aiofiles
+from context import context
 
 # загружаем токен
 load_dotenv()
@@ -41,35 +43,34 @@ async def check_updates():
     last_known_ids = set()
     while True:
         try:
-            with open("data.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-            ads = data.get("results", [])
+            async with context.file_lock:
+                async with aiofiles.open("data.json", "r", encoding="utf-8") as f:
+                    data = json.loads(await f.read())
+                    ads = data.get("results", [])
 
-            new_ads = [ad for ad in ads if ad["link"] not in last_known_ids]
+                    new_ads = [ad for ad in ads if ad["link"] not in last_known_ids]
 
-            for ad in new_ads:
-                for chat_id, filters in subscriptions.items():
-                    if any(
-                        filter_text.lower() in ad["title"].lower() or
-                        filter_text.lower() in ad["price"].lower() or
-                        filter_text.lower() in ad["address"].lower() or
-                        filter_text.lower() in ad["link"].lower()
-                        for filter_text in filters
-                    ):
-                        text = (
-                            f"<b>{ad['title']}</b>\n"
-                            f"{ad['price']}₽\n"
-                            f"{ad['address']}\n"
-                            f"<a href=\"{ad['link']}\">Ссылка</a>"
-                        )
-                        try:
-                            await bot.send_message(chat_id, text)
-                            last_known_ids.add(ad["link"])
-                        except Exception as e:
-                            print(f"Не удалось отправить сообщение пользователю {chat_id}: {e}")
+                    for ad in new_ads:
+                        for chat_id, filters in subscriptions.items():
+                            if any(
+                                filter_text.lower() in ad["title"].lower() or
+                                filter_text.lower() in ad["price"].lower() or
+                                filter_text.lower() in ad["address"].lower()
+                                for filter_text in filters
+                            ):
+                                text = (
+                                    f"<b>{ad['title']}</b>\n"
+                                    f"{ad['price']}₽\n"
+                                    f"{ad['address']}\n"
+                                    f"<a href=\"{ad['link']}\">Ссылка</a>"
+                                )
+                                try:
+                                    await bot.send_message(chat_id, text)
+                                    last_known_ids.add(ad["link"])
+                                except Exception as e:
+                                    print(f"Не удалось отправить сообщение пользователю {chat_id}: {e}")
         except Exception as e:
             print(f"Ошибка в check_updates: {e}")
-
         await asyncio.sleep(10)
 
 async def main():

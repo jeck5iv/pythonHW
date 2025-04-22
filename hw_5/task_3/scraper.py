@@ -3,6 +3,9 @@ import aiohttp
 import json
 from datetime import datetime
 from bs4 import BeautifulSoup
+from context import context
+import aiofiles
+from context import context
 
 AVITO_URL = "https://www.avito.ru/sankt-peterburg/kvartiry/prodam-ASgBAgICAUSSA8YQ?context=H4sIAAAAAAAA_wEjANz_YToxOntzOjg6ImZyb21QYWdlIjtzOjc6ImNhdGFsb2ciO312FITcIwAAAA&p=1"
 
@@ -47,12 +50,12 @@ async def parse_avito_page(session):
     return ads
 
 async def save_ads(ads):
-    filename = "data.json"
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump({
-            "timestamp": datetime.now().isoformat(),
-            "results": ads
-        }, f, indent=2, ensure_ascii=False)
+    async with context.file_lock:
+        async with aiofiles.open("data.json", "w", encoding="utf-8") as f:
+            await f.write(json.dumps({
+                "timestamp": datetime.now().isoformat(),
+                "results": ads
+            }, indent=2, ensure_ascii=False))
 
 async def periodic_scrape(interval=300):
     async with aiohttp.ClientSession(headers=HEADERS) as session:
